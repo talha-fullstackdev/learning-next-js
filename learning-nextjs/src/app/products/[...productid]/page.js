@@ -14,7 +14,7 @@ import React, { useEffect, useState } from "react";
 import products from "../data";
 import { useParams } from "next/navigation";
 const Page = () => {
-  const { productid } = useParams(); // Get product ID from URL
+  const { productid } = useParams(); 
   const [product, setProduct] = useState(null); // Store a single product
   const [notFound, setNotFound] = useState(false); // Track if product is not found
 
