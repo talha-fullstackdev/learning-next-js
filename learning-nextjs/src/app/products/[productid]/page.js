@@ -13,12 +13,16 @@
 import React, { useEffect, useState } from "react";
 import products from "../data";
 import { useParams } from "next/navigation";
+import { notFound } from "next/navigation";
 const Page = () => {
   const { productid } = useParams(); 
   const [product, setProduct] = useState(null); // Store a single product
-  const [notFound, setNotFound] = useState(false); // Track if product is not found
+  const [IDNotFound, setIDNotFound] = useState(false); // Track if product is not found
 
   useEffect(() => {
+    if(productid>100){
+      notFound()
+    }
     if (productid) {
       // Find product based on the dynamic route ID
       const filteredProduct = products.find(
@@ -27,17 +31,17 @@ const Page = () => {
 
       if (filteredProduct) {
         setProduct(filteredProduct);
-        setNotFound(false); // Reset the not found state
+        setIDNotFound(false); // Reset the not found state
       } else {
         setProduct(null);
-        setNotFound(true); // Set not found state to true
+        setIDNotFound(true); // Set not found state to true
       }
     }
   }, [productid]); // Dependency array includes productid
 
   return (
     <div>
-      {notFound ? (
+      {IDNotFound ? (
         <p>No product found with this ID: {productid}</p>
       ) : product ? (
         <div key={product.id} className="">
