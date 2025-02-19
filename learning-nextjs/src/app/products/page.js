@@ -1,15 +1,21 @@
-import React from 'react'
-
+import React from "react";
+import products from "./data";
 const ProductsPage = () => {
   return (
     <div>
-       <li>product : 1</li>
-       <li>product : 2</li>
-       <li>product : 3</li>
-       <li>product : 4</li>
-       <li>product : 5</li>
+      {products.map((product) => (
+        <div key={product.id} className="">
+          <p>Id: {product.id}</p>
+          <p>Name: {product.name}</p>
+          <p>Price: {product.price}</p>
+          <p>Category :{product.category}</p>
+          <p>Stock :{product.stock}</p>
+          <p>Rating: {product.rating}</p>
+          <p>Description: {product.description}</p>
+        </div>
+      ))}
     </div>
-  )
-}
+  );
+};
 
-export default ProductsPage
+export default ProductsPage;
