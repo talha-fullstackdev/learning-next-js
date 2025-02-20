@@ -3,11 +3,11 @@ import React, { useEffect, useState } from "react";
 import products from "../data";
 import { useParams } from "next/navigation";
 import { notFound } from "next/navigation";
+
 const Page = () => {
   const { productid } = useParams();
   const [product, setProduct] = useState(null);
   const [IDNotFound, setIDNotFound] = useState(false); 
-
   useEffect(() => {
     if (productid > 100) {
       notFound();
