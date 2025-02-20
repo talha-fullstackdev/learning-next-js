@@ -1,16 +1,49 @@
+"use client"
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 export default function Home() {
-  const linkStyles = "ml-2 text-blue-400 hover:underline hover:underline-offset-4"
+  const pathName = usePathname()
+  const linkStyles =
+    "ml-2 text-blue-400 hover:underline hover:underline-offset-4";
+  const linksData = [
+    {
+      name: "about",
+      href: "/about",
+    },
+    {
+      name: "blog",
+      href: "/blog",
+    },
+    {
+      name: "contact",
+      href: "/contact",
+    },
+    {
+      name: "profile",
+      href: "/profile",
+    },
+    {
+      name: "products",
+      href: "/products",
+    },
+    {
+      name: "user",
+      href: "/user",
+    },
+    {
+      name: "address",
+      href: "/address/city",
+    },
+  ];
   return (
-    <div className="">
-    <h1>learning next js</h1>
-    <Link className={linkStyles} href="/about">about</Link>
-    <Link className={linkStyles} href="/blog">blog</Link>
-    <Link className={linkStyles} href="/contact">contact</Link>
-    <Link className={linkStyles} href="/profile">profile</Link>
-    <Link className={linkStyles} href="/products">products</Link>
-    <Link className={linkStyles} href="/user">user</Link>
-    <Link className={linkStyles} href="/address/city">address</Link>
-    </div>
+    <>
+      <h1>learning next js</h1>
+        {linksData.map((link)=>{
+          const isActive = pathName.startsWith(link.href)
+          return(
+            <Link className={`${isActive?"text-red-500":"text-blue-400"}`} key={link.name} href={link.href}>{link.name}</Link>
+          )
+        })}
+    </>
   );
 }
