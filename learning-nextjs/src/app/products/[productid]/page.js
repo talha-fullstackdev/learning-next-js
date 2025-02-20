@@ -1,7 +1,7 @@
 // import React from 'react'
 // const page = ({params}) => {
 //     const productID = params.productid
-    
+
 //   return (
 //     <div>This is page of product id {productID}</div>
 //   )
@@ -15,13 +15,13 @@ import products from "../data";
 import { useParams } from "next/navigation";
 import { notFound } from "next/navigation";
 const Page = () => {
-  const { productid } = useParams(); 
+  const { productid } = useParams();
   const [product, setProduct] = useState(null); // Store a single product
   const [IDNotFound, setIDNotFound] = useState(false); // Track if product is not found
 
   useEffect(() => {
-    if(productid>100){
-      notFound()
+    if (productid > 100) {
+      notFound();
     }
     if (productid) {
       // Find product based on the dynamic route ID
