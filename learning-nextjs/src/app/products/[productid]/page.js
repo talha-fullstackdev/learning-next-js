@@ -76,7 +76,7 @@ const Page = () => {
               </span>
             </div>
 
-            {/* Order Button */}
+      
             <button
               onClick={handleOrder}
               className="mt-6 bg-yellow-500 hover:bg-yellow-600 text-white px-6 py-3 rounded-lg text-lg font-semibold shadow-md transition duration-300"
