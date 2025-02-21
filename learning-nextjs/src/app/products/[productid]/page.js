@@ -19,8 +19,11 @@ const Page = () => {
       );
 
       if (filteredProduct) {
-        setProduct(filteredProduct);
-        setIDNotFound(false);
+        setTimeout(()=>{
+          setProduct(filteredProduct);
+          setIDNotFound(false);
+        },2000)
+       
       } else {
         setIDNotFound(true);
       }
