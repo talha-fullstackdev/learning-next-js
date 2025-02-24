@@ -33,8 +33,8 @@ const Page = () => {
   const handleOrder = () => {
     alert("✅ Your order has been placed successfully!");
         router.push("/") // to redirect to a specific path given
-        router.replace("/") // without history cannot back to previous page
-        router.back() // back to previous url path
+        // router.replace("/") // without history cannot back to previous page
+        // router.back() // back to previous url path
   };
 
   return (
