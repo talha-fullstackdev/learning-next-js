@@ -37,13 +37,14 @@ export default function Home() {
   ];
   return (
     <>
-      <h1>learning next js</h1>
-        {linksData.map((link)=>{
+      {/* <h1>learning next js</h1> */}
+        {/* {linksData.map((link)=>{
           const isActive = pathName.startsWith(link.href)
           return(
             <Link className={`${isActive?"text-red-500":"text-blue-400"}`} key={link.name} href={link.href}>{link.name}</Link>
           )
-        })}
+        })} */}
+        <h1>react v-19</h1>
     </>
   );
 }
