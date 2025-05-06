@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const CityPage = () => {
-  return (
-    <div>user city is abbottabad</div>
-  )
-}
+  return <div>user city is abbottabad</div>;
+};
 
-export default CityPage
+export default CityPage;
