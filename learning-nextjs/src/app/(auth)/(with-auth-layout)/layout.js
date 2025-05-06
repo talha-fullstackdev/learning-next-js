@@ -1,12 +1,12 @@
-import React from 'react'
+import React from "react";
 
-const layout = ({children}) => {
+const layout = ({ children }) => {
   return (
     <div>
-        <h1 className='text-4xl'>auth layout</h1>
-        {children}
+      <h1 className="text-4xl">auth layout</h1>
+      {children}
     </div>
-  )
-}
+  );
+};
 
-export default layout
+export default layout;
